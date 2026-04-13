@@ -145,7 +145,7 @@ async function generateReply(session, userMessage, customerName) {
   session.addMessage("user", userMessage);
 
   const response = await anthropic.messages.create({
-    model: "claude-opus-4-5",
+    model: "claude-3-5-sonnet-20240620",
     max_tokens: 500,
     system: buildSystemPrompt(customerName),
     messages: session.getHistory(),
