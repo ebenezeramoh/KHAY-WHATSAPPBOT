@@ -177,7 +177,7 @@ def generate_reply(session, user_message: str, customer_name: str) -> str:
     session.add_message("user", user_message)
 
     response = claude.messages.create(
-        model="claude-opus-4-5",
+        model="claude-3-5-sonnet-20241022",
         max_tokens=500,
         system=build_system_prompt(customer_name),
         messages=session.get_history(),
